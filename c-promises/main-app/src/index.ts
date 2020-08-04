@@ -9,18 +9,6 @@ window.addEventListener('load', () => {
 
 let calcWorker = new WorkerMessages(new Worker('worker.js'));
 
-function setupSpinningThing() {
-
-  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
-
-  let angle = 0;
-  setInterval(() => {
-    angle += 0.5;
-    angle = angle % 360;
-    spinnerDiv.style.transform = `rotate(${angle}deg)`;
-  }, 10);
-}
-
 function setupButtons() {
   document.querySelector("#calcMain")?.addEventListener('click', () => doCalculationOnMainThread());
   document.querySelector("#calcWorker")?.addEventListener('click', () => doCalculationOnWebWorker());
@@ -54,7 +42,17 @@ async function doCalculationOnWebWorker() {
 
 }
 
+function setupSpinningThing() {
 
+  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
+
+  let angle = 0;
+  setInterval(() => {
+    angle += 0.5;
+    angle = angle % 360;
+    spinnerDiv.style.transform = `rotate(${angle}deg)`;
+  }, 10);
+}
 
 function addTextDiv(text: string) {
   const element = document.createElement('div');

@@ -8,20 +8,8 @@ window.addEventListener('load', () => {
   logMessage('Set up is done. Click a button!');
 });
 
-function setupSpinningThing() {
-
-  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
-
-  let angle = 0;
-  setInterval(() => {
-    angle += 0.5;
-    angle = angle % 360;
-    spinnerDiv.style.transform = `rotate(${angle}deg)`;
-  }, 10);
-}
-
 function setupButtons() {
-  document.querySelector("#calcMain").addEventListener('click', () => doCalculationOnMainThread());
+  document.querySelector("#calcMain")?.addEventListener('click', () => doCalculationOnMainThread());
 }
 
 function doCalculationOnMainThread() {
@@ -34,6 +22,18 @@ function doCalculationOnMainThread() {
 
   logMessage("doCalculationOnMainThread() done")
 
+}
+
+function setupSpinningThing() {
+
+  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
+
+  let angle = 0;
+  setInterval(() => {
+    angle += 0.5;
+    angle = angle % 360;
+    spinnerDiv.style.transform = `rotate(${angle}deg)`;
+  }, 10);
 }
 
 function addTextDiv(text: string) {

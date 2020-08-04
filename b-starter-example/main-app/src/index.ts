@@ -13,18 +13,6 @@ calcWorker.addEventListener('message', ev => {
 });
 
 
-function setupSpinningThing() {
-
-  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
-
-  let angle = 0;
-  setInterval(() => {
-    angle += 0.5;
-    angle = angle % 360;
-    spinnerDiv.style.transform = `rotate(${angle}deg)`;
-  }, 10);
-}
-
 function setupButtons() {
   document.querySelector<HTMLButtonElement>("#calcMain")?.addEventListener('click', () => doCalculationOnMainThread());
   document.querySelector<HTMLButtonElement>("#calcWorker")?.addEventListener('click', () => doCalculationOnWebWorker());
@@ -57,6 +45,18 @@ function doCalculationOnWebWorker() {
 }
 
 
+
+function setupSpinningThing() {
+
+  let spinnerDiv = <HTMLDivElement>document.querySelector(".spinner")
+
+  let angle = 0;
+  setInterval(() => {
+    angle += 0.5;
+    angle = angle % 360;
+    spinnerDiv.style.transform = `rotate(${angle}deg)`;
+  }, 10);
+}
 
 function addTextDiv(text: string) {
   const element = document.createElement('div');
