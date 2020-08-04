@@ -1,16 +1,18 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react",
-      "allowJs": false,
-      "lib": [
-        "WebWorker",
-        "ES6",
-        "DOM.Iterable",
-        "ScriptHost"
-      ]
-    }
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": false,
+    "strictNullChecks": true,
+    "strict": true,
+    "lib": [
+      "WebWorker",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
   }
+}
