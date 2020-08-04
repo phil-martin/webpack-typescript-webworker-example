@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<style>
+    button {
+        padding: 0.55em;
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+        border:none;
+        background: rgb(32, 97, 218);
+        color:white;
+        border-radius: 0.25em;
+        box-shadow: 0.5em 0.5em 2em rgba(0,0,0,0.2);
+        cursor: pointer;
+        border-top:solid 2px rgb(61, 122, 235);
+        border-left:solid 2px rgb(61, 122, 235);
+        border-bottom:solid 2px rgb(18, 71, 168);
+        border-right:solid 2px rgb(18, 71, 168);
+    }
+
+    button:focus{
+        outline: none;
+    }
+</style>
+</head>
+
+<body>
+    <div class="spinner"
+        style="width:60px; height:60px; background:red; left: 30px; top: 30px; margin: 30px;">
+
+    </div>
+    <div>
+        
+    </div>
+    <div style="margin-bottom: 1em;">
+        <button id="calcMain">Do long calculation on Main Thread</button>
+    </div>
+
+    <script src='main-app.js'></script>
+</body>
+
+</html>
